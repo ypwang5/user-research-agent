@@ -1,0 +1,67 @@
+{
+  "status": "succeeded",
+  "error": null,
+  "outputs": {
+    "message": "这份材料之前已分析过（session 1ddcdeccd7514423a9c7ace218801ca4），为避免重复计数已跳过。"
+  },
+  "tokens": 0,
+  "elapsed": 1.1,
+  "nodes": [
+    {
+      "id": "start",
+      "status": "succeeded",
+      "s": 0.0,
+      "error": null
+    },
+    {
+      "id": "http_extract",
+      "status": "succeeded",
+      "s": 0.0,
+      "error": null
+    },
+    {
+      "id": "code_merge",
+      "status": "succeeded",
+      "s": 0.1,
+      "error": null
+    },
+    {
+      "id": "http_redact",
+      "status": "succeeded",
+      "s": 0.0,
+      "error": null
+    },
+    {
+      "id": "code_prep",
+      "status": "succeeded",
+      "s": 0.1,
+      "error": null
+    },
+    {
+      "id": "http_check",
+      "status": "succeeded",
+      "s": 0.0,
+      "error": null
+    },
+    {
+      "id": "code_route",
+      "status": "succeeded",
+      "s": 0.1,
+      "error": null
+    },
+    {
+      "id": "if_ok",
+      "status": "succeeded",
+      "s": 0.0,
+      "error": null
+    },
+    {
+      "id": "end_skip",
+      "status": "succeeded",
+      "s": 0.0,
+      "error": null
+    }
+  ],
+  "id": "R10",
+  "transcript": "\n\n访谈者：您每天的工作大概怎么安排？\n\n受访者：我是王建国，卖家居百货的。每天上午第一件事，就是把三个平台昨天的订单导出来，复制粘贴到一张总表里，再按仓库拆单，这个活儿每天至少一个小时，还经常贴错行。\n\n访谈者：月底呢？\n\n受访者：月底更惨，要拿总表和三个平台的结算单对账，拼多多的技术服务费、抖音的达人佣金扣法都不一样，每个月光对账就得两三天，对完了心里还是没底。\n\n访谈者：那物流方面呢，是不是也很麻烦？\n\n受访者：物流还好，合作的快递挺稳定的，没什么问题。\n"
+}

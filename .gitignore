@@ -1,0 +1,11 @@
+# Dify 源码是独立的上游克隆（627MB），不进本仓库；本地改动见 deploy/dify/
+/dify/
+
+# Python
+__pycache__/
+*.py[oc]
+.pytest_cache/
+.venv/
+
+# 密钥
+.env

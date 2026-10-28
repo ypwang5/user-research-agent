@@ -1,0 +1,676 @@
+{
+  "runs": {
+    "R01": {
+      "status": "succeeded",
+      "elapsed_s": 93.6,
+      "tokens": 8135,
+      "verified": 4,
+      "rejected": 0,
+      "found": [
+        "P1"
+      ],
+      "recall": 1.0,
+      "plan_ok": true,
+      "quote_fidelity": 1.0,
+      "insight_labels": [
+        [
+          "P1",
+          "pain_point",
+          "月底需将多平台账单与支付账户到账逐笔核对，耗时长且大量笔数对不上",
+          "exact"
+        ],
+        [
+          "P1",
+          "pain_point",
+          "平台佣金与运费险等扣费项计算不透明，难以核对清楚",
+          "exact"
+        ],
+        [
+          "OTHER",
+          "workaround",
+          "曾雇佣兼职会计代为对账，后因对方离职而中断",
+          "exact"
+        ],
+        [
+          "WTP_POS",
+          "willingness_to_pay",
+          "对账外包有明确付费意愿，主要障碍是找不到可靠的服务方",
+          "exact"
+        ]
+      ]
+    },
+    "R02": {
+      "status": "succeeded",
+      "elapsed_s": 107.4,
+      "tokens": 9248,
+      "verified": 5,
+      "rejected": 0,
+      "found": [
+        "P2"
+      ],
+      "recall": 1.0,
+      "plan_ok": true,
+      "insight_labels": [
+        [
+          "P2",
+          "pain_point",
+          "售后咨询量巨大且高度重复，一人难以应付，常回复到深夜",
+          "exact"
+        ],
+        [
+          "OTHER",
+          "current_solution",
+          "使用平台自带的自动回复工具处理客服消息",
+          "exact"
+        ],
+        [
+          "P2",
+          "pain_point",
+          "平台自带自动回复过于死板，遇到稍复杂的问法就答非所问",
+          "exact"
+        ],
+        [
+          "P2",
+          "goal",
+          "希望有工具能自动处理重复性客服问题，减轻个人负担",
+          "exact"
+        ],
+        [
+          "WTP_POS",
+          "willingness_to_pay",
+          "愿意为能解决重复客服问题的工具每月支付约三百元",
+          "exact"
+        ]
+      ]
+    },
+    "R03": {
+      "status": "succeeded",
+      "elapsed_s": 144.9,
+      "tokens": 12054,
+      "verified": 5,
+      "rejected": 0,
+      "found": [
+        "P1",
+        "P3"
+      ],
+      "recall": 1.0,
+      "plan_ok": true,
+      "quote_fidelity": 1.0,
+      "insight_labels": [
+        [
+          "P3",
+          "pain_point",
+          "多平台订单需人工导出并复制粘贴到总表，再按仓库拆单，每天耗时至少一小时且易出错",
+          "exact"
+        ],
+        [
+          "P1",
+          "pain_point",
+          "多平台费用扣法不同，月底对账需两三天，且对完仍不放心",
+          "exact"
+        ],
+        [
+          "OTHER",
+          "workaround",
+          "用一张手工总表汇总多平台订单并按仓库拆单，作为日常运营与对账的中间表",
+          "exact"
+        ],
+        [
+          "OTHER",
+          "context",
+          "同时经营淘宝、拼多多、抖音三个平台的家居百货店铺，团队仅 3 人",
+          "exact"
+        ],
+        [
+          "LOGISTICS",
+          "other",
+          "物流环节由合作快递承接，运行稳定，不构成痛点",
+          "exact"
+        ]
+      ]
+    },
+    "R04": {
+      "status": "succeeded",
+      "elapsed_s": 113.1,
+      "tokens": 9515,
+      "verified": 4,
+      "rejected": 0,
+      "found": [
+        "P2",
+        "P4"
+      ],
+      "recall": 1.0,
+      "plan_ok": true,
+      "quote_fidelity": 1.0,
+      "insight_labels": [
+        [
+          "P4",
+          "pain_point",
+          "饰品款式更新快，靠人工刷同行和 1688 选品，命中率低导致大量压货",
+          "exact"
+        ],
+        [
+          "P4",
+          "workaround",
+          "选品靠人工刷同行店铺和 1688 找款，无数据化选品方法",
+          "exact"
+        ],
+        [
+          "P2",
+          "pain_point",
+          "直播后私信集中涌入，重复性问题占多数，人工回复到半夜且回慢会掉体验分",
+          "exact"
+        ],
+        [
+          "P2",
+          "context",
+          "2 人小团队，客服由两人轮班人工处理，无自动化工具",
+          "exact"
+        ]
+      ]
+    },
+    "R05": {
+      "status": "succeeded",
+      "elapsed_s": 135.5,
+      "tokens": 10595,
+      "verified": 3,
+      "rejected": 0,
+      "found": [
+        "P1"
+      ],
+      "recall": 1.0,
+      "plan_ok": true,
+      "quote_fidelity": 1.0,
+      "insight_labels": [
+        [
+          "P1",
+          "pain_point",
+          "双平台结算周期不同，退款与优惠券分摊需手工核算，每月对账耗时约一天半且常有几百元对不上",
+          "exact"
+        ],
+        [
+          "P1",
+          "workaround",
+          "用 Excel 自建大量公式手工完成多平台对账",
+          "exact"
+        ],
+        [
+          "WTP_NEG",
+          "willingness_to_pay",
+          "认为年费两三千元的对账软件太贵、不值得，宁愿自己手工对账",
+          "exact"
+        ]
+      ]
+    },
+    "R06": {
+      "status": "succeeded",
+      "elapsed_s": 180.5,
+      "tokens": 13852,
+      "verified": 4,
+      "rejected": 0,
+      "found": [
+        "P2",
+        "P5"
+      ],
+      "recall": 1.0,
+      "plan_ok": true,
+      "quote_fidelity": 1.0,
+      "insight_labels": [
+        [
+          "P5",
+          "pain_point",
+          "遭遇职业差评师以差评要挟退款，平台申诉流程繁琐、周期长",
+          "exact"
+        ],
+        [
+          "P2",
+          "pain_point",
+          "母婴客服重复性问题极多，夫妻两人人工回复仍回不过来，漏回还会被投诉",
+          "exact"
+        ],
+        [
+          "OTHER",
+          "context",
+          "夫妻店两人共同承担客服，人手有限",
+          "exact"
+        ],
+        [
+          "OTHER",
+          "context",
+          "母婴品类客户咨询集中在月龄适用、气味等细节问题",
+          "exact"
+        ]
+      ]
+    },
+    "R07": {
+      "status": "succeeded",
+      "elapsed_s": 158.6,
+      "tokens": 12140,
+      "verified": 2,
+      "rejected": 0,
+      "found": [
+        "P1"
+      ],
+      "recall": 1.0,
+      "plan_ok": true,
+      "quote_fidelity": 1.0,
+      "insight_labels": [
+        [
+          "P1",
+          "pain_point",
+          "多平台对账每月耗时近两天，抖音运费险与佣金数据对不上",
+          "exact"
+        ],
+        [
+          "P1",
+          "pain_point",
+          "反复对账对不上已造成明显情绪负担",
+          "exact"
+        ]
+      ]
+    },
+    "R08": {
+      "status": "succeeded",
+      "elapsed_s": 130.3,
+      "tokens": 10193,
+      "verified": 3,
+      "rejected": 0,
+      "found": [
+        "P3",
+        "P5"
+      ],
+      "recall": 1.0,
+      "plan_ok": true,
+      "quote_fidelity": 1.0,
+      "insight_labels": [
+        [
+          "P3",
+          "pain_point",
+          "多平台订单需每天人工导出合并成一张表再交仓库打单发货，日常耗时四十多分钟",
+          "exact"
+        ],
+        [
+          "P3",
+          "pain_point",
+          "节假日订单量上涨时，订单合并与打单环节耗时翻数倍，成为发货瓶颈",
+          "exact"
+        ],
+        [
+          "P5",
+          "pain_point",
+          "遭遇恶意差评与虚假退款索赔，申诉成功率低，造成货款损失和店铺评分受损",
+          "exact"
+        ]
+      ]
+    },
+    "R09": {
+      "status": "succeeded",
+      "elapsed_s": 154.7,
+      "tokens": 11261,
+      "verified": 5,
+      "rejected": 0,
+      "found": [
+        "P1",
+        "P3"
+      ],
+      "recall": 1.0,
+      "plan_ok": true,
+      "insight_labels": [
+        [
+          "P3",
+          "pain_point",
+          "多平台订单需每天手工导出复制到表格汇总，单这一步耗时约40分钟",
+          "exact"
+        ],
+        [
+          "P1",
+          "pain_point",
+          "月底需花两天核对312行对账表，且经常对错、差额原因不明",
+          "exact"
+        ],
+        [
+          "P1",
+          "pain_point",
+          "平台到账金额与订单金额存在差额，原因不明需人工排查",
+          "exact"
+        ],
+        [
+          "P1",
+          "workaround",
+          "用文本编辑器或电子表格手工建对账表，逐平台复制粘贴订单数据",
+          "exact"
+        ],
+        [
+          "OTHER",
+          "context",
+          "一人同时经营淘宝、抖音、拼多多三个女装店铺",
+          "exact"
+        ]
+      ]
+    },
+    "R10": {
+      "status": "succeeded",
+      "elapsed_s": 1.1,
+      "tokens": 0,
+      "skipped_ok": true
+    }
+  },
+  "pains": {
+    "P1": {
+      "name": "月底多平台对账耗时出错",
+      "expected": [
+        "U01",
+        "U03",
+        "U05",
+        "U09"
+      ],
+      "clusters": 2,
+      "best_cluster_count": 4,
+      "union_people": [
+        "U01",
+        "U03",
+        "U05",
+        "U09"
+      ],
+      "recall_people": 1.0,
+      "intruders": [],
+      "main_cluster_people": [
+        "U01",
+        "U03",
+        "U05",
+        "U09"
+      ],
+      "count_exact": true
+    },
+    "P2": {
+      "name": "售后重复咨询回不过来",
+      "expected": [
+        "U02",
+        "U04",
+        "U06"
+      ],
+      "clusters": 3,
+      "best_cluster_count": 3,
+      "union_people": [
+        "U02",
+        "U04",
+        "U06"
+      ],
+      "recall_people": 1.0,
+      "intruders": [],
+      "main_cluster_people": [
+        "U02",
+        "U04",
+        "U06"
+      ],
+      "count_exact": true
+    },
+    "P3": {
+      "name": "每天手工汇总多平台订单",
+      "expected": [
+        "U03",
+        "U08",
+        "U09"
+      ],
+      "clusters": 2,
+      "best_cluster_count": 3,
+      "union_people": [
+        "U03",
+        "U08",
+        "U09"
+      ],
+      "recall_people": 1.0,
+      "intruders": [],
+      "main_cluster_people": [
+        "U03",
+        "U08",
+        "U09"
+      ],
+      "count_exact": true
+    },
+    "P4": {
+      "name": "选品难/找不到爆款",
+      "expected": [
+        "U04"
+      ],
+      "clusters": 2,
+      "best_cluster_count": 1,
+      "union_people": [
+        "U04"
+      ],
+      "recall_people": 1.0,
+      "intruders": [],
+      "main_cluster_people": [
+        "U04"
+      ],
+      "count_exact": true
+    },
+    "P5": {
+      "name": "恶意差评/职业差评师",
+      "expected": [
+        "U06",
+        "U08"
+      ],
+      "clusters": 1,
+      "best_cluster_count": 2,
+      "union_people": [
+        "U06",
+        "U08"
+      ],
+      "recall_people": 1.0,
+      "intruders": [],
+      "main_cluster_people": [
+        "U06",
+        "U08"
+      ],
+      "count_exact": true
+    }
+  },
+  "checks": {
+    "no_logistics_pain(T_LEAD)": false,
+    "pii_absent(T_PII)": true,
+    "dup_skipped(T_DUP)": true,
+    "same_person_not_counted(T_SAME)": true,
+    "wtp_pos_neg_separate(T_WTP)": true,
+    "all_runs_succeeded": true,
+    "all_plans_valid": true
+  },
+  "memory_totals": {
+    "total_insights": 20,
+    "total_sessions": 9,
+    "total_interviewees": 8
+  },
+  "memory_dump": [
+    [
+      "P1",
+      4,
+      [
+        "U01",
+        "U03",
+        "U05",
+        "U09"
+      ],
+      "pain_point",
+      "月底需将多平台账单与支付账户到账逐笔核对，耗时长且大量笔数对不上"
+    ],
+    [
+      "OTHER",
+      3,
+      [
+        "U03",
+        "U05",
+        "U09"
+      ],
+      "workaround",
+      "用一张手工总表汇总多平台订单并按仓库拆单，作为日常运营与对账的中间表"
+    ],
+    [
+      "P3",
+      3,
+      [
+        "U03",
+        "U08",
+        "U09"
+      ],
+      "pain_point",
+      "多平台订单需人工导出并复制粘贴到总表，再按仓库拆单，每天耗时至少一小时且易出错"
+    ],
+    [
+      "P2",
+      3,
+      [
+        "U02",
+        "U04",
+        "U06"
+      ],
+      "pain_point",
+      "售后咨询量巨大且高度重复，一人难以应付，常回复到深夜"
+    ],
+    [
+      "P5",
+      2,
+      [
+        "U06",
+        "U08"
+      ],
+      "pain_point",
+      "遭遇职业差评师以差评要挟退款，平台申诉流程繁琐、周期长"
+    ],
+    [
+      "OTHER",
+      2,
+      [
+        "U04",
+        "U06"
+      ],
+      "context",
+      "2 人小团队，客服由两人轮班人工处理，无自动化工具"
+    ],
+    [
+      "OTHER",
+      1,
+      [
+        "U09"
+      ],
+      "context",
+      "一人同时经营淘宝、抖音、拼多多三个女装店铺"
+    ],
+    [
+      "P3",
+      1,
+      [
+        "U08"
+      ],
+      "pain_point",
+      "节假日订单量上涨时，订单合并与打单环节耗时翻数倍，成为发货瓶颈"
+    ],
+    [
+      "OTHER",
+      1,
+      [
+        "U06"
+      ],
+      "context",
+      "母婴品类客户咨询集中在月龄适用、气味等细节问题"
+    ],
+    [
+      "WTP_NEG",
+      1,
+      [
+        "U05"
+      ],
+      "willingness_to_pay",
+      "认为年费两三千元的对账软件太贵、不值得，宁愿自己手工对账"
+    ],
+    [
+      "P4",
+      1,
+      [
+        "U04"
+      ],
+      "pain_point",
+      "饰品款式更新快，靠人工刷同行和 1688 选品，命中率低导致大量压货"
+    ],
+    [
+      "P4",
+      1,
+      [
+        "U04"
+      ],
+      "workaround",
+      "选品靠人工刷同行店铺和 1688 找款，无数据化选品方法"
+    ],
+    [
+      "OTHER",
+      1,
+      [
+        "U03"
+      ],
+      "context",
+      "同时经营淘宝、拼多多、抖音三个平台的家居百货店铺，团队仅 3 人"
+    ],
+    [
+      "LOGISTICS",
+      1,
+      [
+        "U03"
+      ],
+      "other",
+      "物流环节由合作快递承接，运行稳定，不构成痛点"
+    ],
+    [
+      "WTP_POS",
+      1,
+      [
+        "U02"
+      ],
+      "willingness_to_pay",
+      "愿意为能解决重复客服问题的工具每月支付约三百元"
+    ],
+    [
+      "P2",
+      1,
+      [
+        "U02"
+      ],
+      "goal",
+      "希望有工具能自动处理重复性客服问题，减轻个人负担"
+    ],
+    [
+      "OTHER",
+      1,
+      [
+        "U02"
+      ],
+      "current_solution",
+      "使用平台自带的自动回复工具处理客服消息"
+    ],
+    [
+      "P2",
+      1,
+      [
+        "U02"
+      ],
+      "pain_point",
+      "平台自带自动回复过于死板，遇到稍复杂的问法就答非所问"
+    ],
+    [
+      "P1",
+      1,
+      [
+        "U01"
+      ],
+      "workaround",
+      "曾雇佣兼职会计代为对账，后因对方离职而中断"
+    ],
+    [
+      "WTP_POS",
+      1,
+      [
+        "U01"
+      ],
+      "willingness_to_pay",
+      "对账外包有明确付费意愿，主要障碍是找不到可靠的服务方"
+    ]
+  ]
+}

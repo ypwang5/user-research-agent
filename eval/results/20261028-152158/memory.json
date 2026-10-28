@@ -1,0 +1,474 @@
+{
+  "project": "eval-网店小卖家",
+  "total_insights": 20,
+  "total_sessions": 9,
+  "total_interviewees": 8,
+  "insights": [
+    {
+      "project": "eval-网店小卖家",
+      "type": "pain_point",
+      "summary": "月底需将多平台账单与支付账户到账逐笔核对，耗时长且大量笔数对不上",
+      "mention_count": 4,
+      "evidence": [
+        {
+          "interviewee_id": "U01",
+          "session_id": "ef9b7c4a352a4398b659711ace199acc",
+          "quote": "上个月我把淘宝和抖音的账单导出来，跟支付宝、抖音钱包的到账一笔一笔对，整整弄了两天，还有二十几笔对不上"
+        },
+        {
+          "interviewee_id": "U01",
+          "session_id": "ef9b7c4a352a4398b659711ace199acc",
+          "quote": "平台扣的佣金和运费险算不明白"
+        },
+        {
+          "interviewee_id": "U03",
+          "session_id": "1ddcdeccd7514423a9c7ace218801ca4",
+          "quote": "月底更惨，要拿总表和三个平台的结算单对账，拼多多的技术服务费、抖音的达人佣金扣法都不一样，每个月光对账就得两三天，对完了心里还是没底。"
+        },
+        {
+          "interviewee_id": "U05",
+          "session_id": "1c5f46d7b0b141ed84088f1c0dfd76ec",
+          "quote": "月底对账是最烦的，淘宝和京东的结算周期不一样，退款、优惠券分摊都要自己算，Excel 里公式写了一大堆，每个月还是要折腾一天半，总有几百块对不上。"
+        },
+        {
+          "interviewee_id": "U01",
+          "session_id": "1ed74a597333447a8f3175faf3492acc",
+          "quote": "这个月对账又花了快两天，抖音那边的运费险和佣金还是对不上"
+        },
+        {
+          "interviewee_id": "U01",
+          "session_id": "1ed74a597333447a8f3175faf3492acc",
+          "quote": "我自己都快对出心理阴影了"
+        },
+        {
+          "interviewee_id": "U09",
+          "session_id": "c2cac9c607b846ab87e17e4f17067d70",
+          "quote": "共 312 行，每月底要花两天核对，经常对错"
+        },
+        {
+          "interviewee_id": "U09",
+          "session_id": "c2cac9c607b846ab87e17e4f17067d70",
+          "quote": "对不上，待查"
+        }
+      ],
+      "created_at": 1793172123,
+      "id": "2011cebda1cd4116918905a5db17b3bf",
+      "interviewees": [
+        "U01",
+        "U03",
+        "U05",
+        "U09"
+      ],
+      "updated_at": 1793173205
+    },
+    {
+      "project": "eval-网店小卖家",
+      "type": "workaround",
+      "summary": "用一张手工总表汇总多平台订单并按仓库拆单，作为日常运营与对账的中间表",
+      "mention_count": 3,
+      "evidence": [
+        {
+          "interviewee_id": "U03",
+          "session_id": "1ddcdeccd7514423a9c7ace218801ca4",
+          "quote": "复制粘贴到一张总表里，再按仓库拆单"
+        },
+        {
+          "interviewee_id": "U05",
+          "session_id": "1c5f46d7b0b141ed84088f1c0dfd76ec",
+          "quote": "Excel 里公式写了一大堆，每个月还是要折腾一天半"
+        },
+        {
+          "interviewee_id": "U09",
+          "session_id": "c2cac9c607b846ab87e17e4f17067d70",
+          "quote": "一个个复制到这个表里"
+        }
+      ],
+      "created_at": 1793172325,
+      "id": "abb1636e26c841ea8549af0964e1a52b",
+      "interviewees": [
+        "U03",
+        "U05",
+        "U09"
+      ],
+      "updated_at": 1793173206
+    },
+    {
+      "project": "eval-网店小卖家",
+      "type": "pain_point",
+      "summary": "多平台订单需人工导出并复制粘贴到总表，再按仓库拆单，每天耗时至少一小时且易出错",
+      "mention_count": 3,
+      "evidence": [
+        {
+          "interviewee_id": "U03",
+          "session_id": "1ddcdeccd7514423a9c7ace218801ca4",
+          "quote": "每天上午第一件事，就是把三个平台昨天的订单导出来，复制粘贴到一张总表里，再按仓库拆单，这个活儿每天至少一个小时，还经常贴错行。"
+        },
+        {
+          "interviewee_id": "U08",
+          "session_id": "5f13a670d86b41b48d87e1f868922183",
+          "quote": "她每天早上要把淘宝和抖音的订单导出来合成一张表，给仓库打单发货，一弄就是四十多分钟"
+        },
+        {
+          "interviewee_id": "U09",
+          "session_id": "c2cac9c607b846ab87e17e4f17067d70",
+          "quote": "我每天早上要先打开淘宝后台，把昨天的订单导出来，再打开抖音和拼多多，一个个复制到这个表里，光这一步就要四十分钟"
+        }
+      ],
+      "created_at": 1793172325,
+      "id": "442f96f0f47340b891fca89a85721f23",
+      "interviewees": [
+        "U03",
+        "U08",
+        "U09"
+      ],
+      "updated_at": 1793173204
+    },
+    {
+      "project": "eval-网店小卖家",
+      "type": "pain_point",
+      "summary": "售后咨询量巨大且高度重复，一人难以应付，常回复到深夜",
+      "mention_count": 3,
+      "evidence": [
+        {
+          "interviewee_id": "U02",
+          "session_id": "55b0b515555649348e6624fb8d999066",
+          "quote": "每天晚上要回两三百条消息，大部分都是问尺码、问什么时候发货，问题都差不多，可我一个人根本回不过来，经常回到半夜一点。"
+        },
+        {
+          "interviewee_id": "U04",
+          "session_id": "284651c339dd48d89af9b66d09032240",
+          "quote": "直播完那几个小时，后台私信一下子涌进来上百条，大多数都是问\"这个过敏吗\"\"几天到\"，翻来覆去就那几个问题，我和我妹两个人回到半夜都回不完，回慢了还掉体验分。"
+        },
+        {
+          "interviewee_id": "U06",
+          "session_id": "95487de568624574bc9891e3ace2428f",
+          "quote": "同样的问题一天回几十遍，我老公帮着回也回不过来，有时候漏回了还被投诉。"
+        }
+      ],
+      "created_at": 1793172218,
+      "id": "edbc273903844252bc317de922b8aa0d",
+      "interviewees": [
+        "U02",
+        "U04",
+        "U06"
+      ],
+      "updated_at": 1793172720
+    },
+    {
+      "project": "eval-网店小卖家",
+      "type": "pain_point",
+      "summary": "遭遇职业差评师以差评要挟退款，平台申诉流程繁琐、周期长",
+      "mention_count": 2,
+      "evidence": [
+        {
+          "interviewee_id": "U06",
+          "session_id": "95487de568624574bc9891e3ace2428f",
+          "quote": "最气人的是职业差评师，上个月连着收到三个差评，一看就是同一伙人，先拍下来再要挟退款不退就差评，平台申诉要截图要聊天记录，搞了一个礼拜才删掉一个。"
+        },
+        {
+          "interviewee_id": "U08",
+          "session_id": "5f13a670d86b41b48d87e1f868922183",
+          "quote": "收到货吃了一半说过期，要求全额退款，不给就一星差评，一个月总要碰到几次，申诉成功率很低"
+        }
+      ],
+      "created_at": 1793172720,
+      "id": "27b446a1c26d4c1d927f5ba351c7c120",
+      "interviewees": [
+        "U06",
+        "U08"
+      ],
+      "updated_at": 1793173057
+    },
+    {
+      "project": "eval-网店小卖家",
+      "type": "context",
+      "summary": "2 人小团队，客服由两人轮班人工处理，无自动化工具",
+      "mention_count": 2,
+      "evidence": [
+        {
+          "interviewee_id": "U04",
+          "session_id": "284651c339dd48d89af9b66d09032240",
+          "quote": "我和我妹两个人回到半夜都回不完"
+        },
+        {
+          "interviewee_id": "U06",
+          "session_id": "95487de568624574bc9891e3ace2428f",
+          "quote": "我老公帮着回也回不过来"
+        }
+      ],
+      "created_at": 1793172471,
+      "id": "0d0c9c448512429885738d8f026cd0b5",
+      "interviewees": [
+        "U04",
+        "U06"
+      ],
+      "updated_at": 1793172721
+    },
+    {
+      "project": "eval-网店小卖家",
+      "type": "context",
+      "summary": "一人同时经营淘宝、抖音、拼多多三个女装店铺",
+      "mention_count": 1,
+      "evidence": [
+        {
+          "interviewee_id": "U09",
+          "session_id": "c2cac9c607b846ab87e17e4f17067d70",
+          "quote": "再打开抖音和拼多多"
+        }
+      ],
+      "created_at": 1793173206,
+      "id": "87bb042b31114338b7c561070237984e",
+      "interviewees": [
+        "U09"
+      ],
+      "updated_at": 1793173206
+    },
+    {
+      "project": "eval-网店小卖家",
+      "type": "pain_point",
+      "summary": "节假日订单量上涨时，订单合并与打单环节耗时翻数倍，成为发货瓶颈",
+      "mention_count": 1,
+      "evidence": [
+        {
+          "interviewee_id": "U08",
+          "session_id": "5f13a670d86b41b48d87e1f868922183",
+          "quote": "节假日订单多的时候要两个小时"
+        }
+      ],
+      "created_at": 1793173057,
+      "id": "2ad736ffcd554564a592c27bdaf7b511",
+      "interviewees": [
+        "U08"
+      ],
+      "updated_at": 1793173057
+    },
+    {
+      "project": "eval-网店小卖家",
+      "type": "context",
+      "summary": "母婴品类客户咨询集中在月龄适用、气味等细节问题",
+      "mention_count": 1,
+      "evidence": [
+        {
+          "interviewee_id": "U06",
+          "session_id": "95487de568624574bc9891e3ace2428f",
+          "quote": "宝妈问题特别细，\"几个月能用\"\"有没有异味\""
+        }
+      ],
+      "created_at": 1793172721,
+      "id": "79314fbf228a44debaadac72c2201648",
+      "interviewees": [
+        "U06"
+      ],
+      "updated_at": 1793172721
+    },
+    {
+      "project": "eval-网店小卖家",
+      "type": "willingness_to_pay",
+      "summary": "认为年费两三千元的对账软件太贵、不值得，宁愿自己手工对账",
+      "mention_count": 1,
+      "evidence": [
+        {
+          "interviewee_id": "U05",
+          "session_id": "1c5f46d7b0b141ed84088f1c0dfd76ec",
+          "quote": "看过几个，一年都要两三千，我一个月才赚多少，觉得太贵了，不值得，宁可自己慢慢对。"
+        }
+      ],
+      "created_at": 1793172583,
+      "id": "ccc1d2269a9d455fa7d6698808c3f89c",
+      "interviewees": [
+        "U05"
+      ],
+      "updated_at": 1793172583
+    },
+    {
+      "project": "eval-网店小卖家",
+      "type": "pain_point",
+      "summary": "饰品款式更新快，靠人工刷同行和 1688 选品，命中率低导致大量压货",
+      "mention_count": 1,
+      "evidence": [
+        {
+          "interviewee_id": "U04",
+          "session_id": "284651c339dd48d89af9b66d09032240",
+          "quote": "我每天刷一两个小时同行和1688，还是不知道下一个爆款是什么，上个月进了二十个新款，卖得动的就两个，压了好几千的货。"
+        }
+      ],
+      "created_at": 1793172470,
+      "id": "0525f8f1176140c0badf6a22551d5945",
+      "interviewees": [
+        "U04"
+      ],
+      "updated_at": 1793172470
+    },
+    {
+      "project": "eval-网店小卖家",
+      "type": "workaround",
+      "summary": "选品靠人工刷同行店铺和 1688 找款，无数据化选品方法",
+      "mention_count": 1,
+      "evidence": [
+        {
+          "interviewee_id": "U04",
+          "session_id": "284651c339dd48d89af9b66d09032240",
+          "quote": "我每天刷一两个小时同行和1688"
+        }
+      ],
+      "created_at": 1793172470,
+      "id": "8f6cb37f19bc4c529ce88d0111d1e11e",
+      "interviewees": [
+        "U04"
+      ],
+      "updated_at": 1793172470
+    },
+    {
+      "project": "eval-网店小卖家",
+      "type": "context",
+      "summary": "同时经营淘宝、拼多多、抖音三个平台的家居百货店铺，团队仅 3 人",
+      "mention_count": 1,
+      "evidence": [
+        {
+          "interviewee_id": "U03",
+          "session_id": "1ddcdeccd7514423a9c7ace218801ca4",
+          "quote": "我是[受访者]，卖家居百货的。"
+        }
+      ],
+      "created_at": 1793172325,
+      "id": "5a43dcb6725040bda095105e7ab58050",
+      "interviewees": [
+        "U03"
+      ],
+      "updated_at": 1793172325
+    },
+    {
+      "project": "eval-网店小卖家",
+      "type": "other",
+      "summary": "物流环节由合作快递承接，运行稳定，不构成痛点",
+      "mention_count": 1,
+      "evidence": [
+        {
+          "interviewee_id": "U03",
+          "session_id": "1ddcdeccd7514423a9c7ace218801ca4",
+          "quote": "物流还好，合作的快递挺稳定的，没什么问题。"
+        }
+      ],
+      "created_at": 1793172325,
+      "id": "fd671a76f4de40e096eedbc8215c7d1d",
+      "interviewees": [
+        "U03"
+      ],
+      "updated_at": 1793172325
+    },
+    {
+      "project": "eval-网店小卖家",
+      "type": "willingness_to_pay",
+      "summary": "愿意为能解决重复客服问题的工具每月支付约三百元",
+      "mention_count": 1,
+      "evidence": [
+        {
+          "interviewee_id": "U02",
+          "session_id": "55b0b515555649348e6624fb8d999066",
+          "quote": "一个月三百块我是愿意出的。"
+        }
+      ],
+      "created_at": 1793172219,
+      "id": "605b2f84120c4dc786752e9de843d3e7",
+      "interviewees": [
+        "U02"
+      ],
+      "updated_at": 1793172219
+    },
+    {
+      "project": "eval-网店小卖家",
+      "type": "goal",
+      "summary": "希望有工具能自动处理重复性客服问题，减轻个人负担",
+      "mention_count": 1,
+      "evidence": [
+        {
+          "interviewee_id": "U02",
+          "session_id": "55b0b515555649348e6624fb8d999066",
+          "quote": "如果有个工具能帮我把这些重复问题处理掉"
+        }
+      ],
+      "created_at": 1793172219,
+      "id": "c979e30435d6478bb17015137cc8874d",
+      "interviewees": [
+        "U02"
+      ],
+      "updated_at": 1793172219
+    },
+    {
+      "project": "eval-网店小卖家",
+      "type": "current_solution",
+      "summary": "使用平台自带的自动回复工具处理客服消息",
+      "mention_count": 1,
+      "evidence": [
+        {
+          "interviewee_id": "U02",
+          "session_id": "55b0b515555649348e6624fb8d999066",
+          "quote": "之前试过淘宝自带的自动回复"
+        }
+      ],
+      "created_at": 1793172218,
+      "id": "c68158dbabe643239a09570a9c9428d9",
+      "interviewees": [
+        "U02"
+      ],
+      "updated_at": 1793172218
+    },
+    {
+      "project": "eval-网店小卖家",
+      "type": "pain_point",
+      "summary": "平台自带自动回复过于死板，遇到稍复杂的问法就答非所问",
+      "mention_count": 1,
+      "evidence": [
+        {
+          "interviewee_id": "U02",
+          "session_id": "55b0b515555649348e6624fb8d999066",
+          "quote": "太死板了，客户问的稍微绕一点它就答非所问。"
+        }
+      ],
+      "created_at": 1793172218,
+      "id": "f42142261bd94db2906d69402f1cb368",
+      "interviewees": [
+        "U02"
+      ],
+      "updated_at": 1793172218
+    },
+    {
+      "project": "eval-网店小卖家",
+      "type": "workaround",
+      "summary": "曾雇佣兼职会计代为对账，后因对方离职而中断",
+      "mention_count": 1,
+      "evidence": [
+        {
+          "interviewee_id": "U01",
+          "session_id": "ef9b7c4a352a4398b659711ace199acc",
+          "quote": "去年请过一个兼职会计专门帮我对账，一个月给她一千块，她后来不干了"
+        }
+      ],
+      "created_at": 1793172124,
+      "id": "334e198cf5624929927630cef92fe1c8",
+      "interviewees": [
+        "U01"
+      ],
+      "updated_at": 1793172124
+    },
+    {
+      "project": "eval-网店小卖家",
+      "type": "willingness_to_pay",
+      "summary": "对账外包有明确付费意愿，主要障碍是找不到可靠的服务方",
+      "mention_count": 1,
+      "evidence": [
+        {
+          "interviewee_id": "U01",
+          "session_id": "ef9b7c4a352a4398b659711ace199acc",
+          "quote": "说实话这个钱我愿意花，就是找不到靠谱的人"
+        }
+      ],
+      "created_at": 1793172124,
+      "id": "eb8c6b6edb454d71b366c4db247da98a",
+      "interviewees": [
+        "U01"
+      ],
+      "updated_at": 1793172124
+    }
+  ]
+}

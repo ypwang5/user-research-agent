@@ -1,0 +1,26 @@
+# 本地覆盖：MinIO 官方已停止发布社区镜像，改用 Milvus 单机内嵌模式
+# （内嵌 etcd + 本地磁盘存储），不再需要 etcd / minio 两个容器。
+services:
+  etcd:
+    profiles: !override
+      - disabled
+  minio:
+    profiles: !override
+      - disabled
+  milvus-standalone:
+    restart: unless-stopped
+    environment:
+      DEPLOY_MODE: STANDALONE
+      ETCD_USE_EMBED: "true"
+      ETCD_DATA_DIR: /var/lib/milvus/etcd
+      ETCD_CONFIG_PATH: /milvus/configs/embedEtcd.yaml
+      COMMON_STORAGETYPE: local
+    # 数据放 Docker 命名卷（WSL ext4）。放 Windows 目录挂载时 fsync 太慢，
+    # 内嵌 etcd 租约超时会导致 Milvus 自行退出。
+    volumes: !override
+      - milvus_data:/var/lib/milvus
+      - ./milvus-embed/embedEtcd.yaml:/milvus/configs/embedEtcd.yaml
+    depends_on: !reset []
+
+volumes:
+  milvus_data:

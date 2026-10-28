@@ -1,0 +1,12 @@
+services:
+  memory-service:
+    build: .
+    container_name: memory-service
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      # 容器内访问宿主机上 Dify 编排起来的 Milvus
+      MILVUS_URI: http://host.docker.internal:19530
