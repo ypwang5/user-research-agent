@@ -21,6 +21,10 @@ services:
       - milvus_data:/var/lib/milvus
       - ./milvus-embed/embedEtcd.yaml:/milvus/configs/embedEtcd.yaml
     depends_on: !reset []
+  # 登录凭证默认 60 分钟过期，网页版上传文件不会自动续期 → 延长到 12 小时
+  api:
+    environment:
+      ACCESS_TOKEN_EXPIRE_MINUTES: "720"
 
 volumes:
   milvus_data:
