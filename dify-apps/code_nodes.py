@@ -273,8 +273,8 @@ def render_report(synth_text: str, stats_json: str, verified_json: str,
                       f"{a.get('title')} | {a.get('success_criteria', '')} | {','.join(a.get('depends_on') or []) or '-'} |")
     if plan.get("next_interview_focus"):
         md += ["", "## 下轮访谈重点"] + [f"- {q}" for q in plan["next_interview_focus"]]
-    if plan.get("caveats"):
-        md += ["", "## 局限"] + [f"- {c}" for c in plan["caveats"]]
+    if plan.get("caveats"):   # 模型爱把"样本少"展开写一大段：最多 3 条、每条 60 字
+        md += ["", "## 局限"] + [f"- {c if len(str(c)) <= 60 else str(c)[:60] + '…'}" for c in plan["caveats"][:3]]
     if v.get("rejected"):
         md += ["", "## 未通过原话核对（未入库）"] + [f"- {r.get('summary')}（{r.get('reason')}）" for r in v["rejected"]]
     if media_errors or warnings:

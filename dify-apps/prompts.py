@@ -99,7 +99,7 @@ pain 痛度、frequency 频率、willingness_to_pay 付费意愿（行为证据�
  "next_actions": [{"id": "A1", "type": "interview", "title": "...", "goal": "...", "steps": ["..."],
    "success_criteria": "...", "depends_on": [], "priority": "P0", "owner": "human", "est_hours": 2}],
  "next_interview_focus": ["下一轮访谈要重点问的问题"],
- "caveats": ["局限性，如样本量"]}"""
+ "caveats": ["局限性，最多 3 条，每条一句话（不超过 40 字），只写会影响结论的，如样本量"]}"""
 
 SYNTH_USER = """调研方向：{{#start.project#}}
 
