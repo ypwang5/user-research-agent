@@ -1,0 +1,54 @@
+# 公网演示部署（Mac mini）：Milvus（单机、内嵌 etcd）+ 记忆服务 + Cloudflare Tunnel
+#   docker compose up -d --build        （在本目录执行）
+# 三个容器在同一个内部网络里互相访问，都不对局域网暴露端口；记忆服务只绑 127.0.0.1:18000 方便本机自查。
+# 公网入口只有 Tunnel：https://urm.wyphub.com → memory-service:8000（还要带 Bearer Token）。
+name: urm
+
+services:
+  milvus:
+    image: milvusdb/milvus:v2.6.3
+    command: ["milvus", "run", "standalone"]
+    restart: unless-stopped
+    environment:
+      # 与 Windows 本机一致：MinIO 社区镜像已停更，用内嵌 etcd + 本地磁盘，不需要 etcd / minio 两个容器
+      DEPLOY_MODE: STANDALONE
+      ETCD_USE_EMBED: "true"
+      ETCD_DATA_DIR: /var/lib/milvus/etcd
+      ETCD_CONFIG_PATH: /milvus/configs/embedEtcd.yaml
+      COMMON_STORAGETYPE: local
+      common.security.authorizationEnabled: "true"
+    volumes:
+      - milvus_data:/var/lib/milvus
+      - ../dify/milvus-embed/embedEtcd.yaml:/milvus/configs/embedEtcd.yaml:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9091/healthz"]
+      interval: 30s
+      start_period: 90s
+      timeout: 20s
+      retries: 3
+
+  memory-service:
+    # Mac 在国内拉不到 Docker Hub：镜像在能联网的机器上用 buildx 构建 arm64 版，docker save / load 传过来
+    image: urm/memory-service:arm64
+    build: ../../memory-service
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      MILVUS_URI: http://milvus:19530
+    ports:
+      - "127.0.0.1:18000:8000"
+    depends_on:
+      milvus:
+        condition: service_healthy
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    command: ["tunnel", "--no-autoupdate", "--config", "/etc/cloudflared/config.yml", "run"]
+    volumes:
+      - ./cloudflared:/etc/cloudflared:ro
+    depends_on:
+      - memory-service
+
+volumes:
+  milvus_data:

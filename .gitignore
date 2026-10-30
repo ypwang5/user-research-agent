@@ -12,3 +12,7 @@ __pycache__/
 
 # 运行产物（测试访谈生成的提纲/记录）
 outputs/
+
+# Mac mini 公网部署的密钥与 Tunnel 凭证
+deploy/macmini/.env
+deploy/macmini/cloudflared/
