@@ -239,9 +239,18 @@ _Dumper.add_representer(str, _str)
 
 
 if __name__ == "__main__":
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--memory-url", help="记忆服务的公网地址（如 https://urm.wyphub.com）；给了就生成 Dify 云版到 dist/cloud/")
+    args = ap.parse_args()
     out = Path(__file__).parent / "dist"
-    out.mkdir(exist_ok=True)
+    if args.memory_url:
+        MEMORY = args.memory_url.rstrip("/")
+        out = out / "cloud"
+    out.mkdir(parents=True, exist_ok=True)
     for fname, doc in [("interview_guide.yml", build_guide()), ("interview_analysis.yml", build_analysis())]:
+        if args.memory_url:   # 公开演示：访客的材料会进同一个记忆库，写在应用说明里
+            doc["app"]["description"] += "（公开演示：请勿上传真实隐私；同一调研方向的数据会共享，可能被定期清理）"
         (out / fname).write_text(yaml.dump(doc, Dumper=_Dumper, allow_unicode=True, sort_keys=False,
                                            width=10000), encoding="utf-8")
         print("wrote", out / fname, len(doc["workflow"]["graph"]["nodes"]), "nodes")

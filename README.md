@@ -2,6 +2,11 @@
 
 帮副业者找到"真实存在、有人愿意付费"的需求：**生成访谈提纲 → 你去访谈 → 上传材料 → 提炼洞察 + 长期记忆 + 机会评分 + 可执行计划**。
 
+## 在线演示
+
+两个应用部署在 Dify 官方云，记忆服务 + Milvus 跑在家里的 Mac mini 上，经 Cloudflare Tunnel 以 `https://urm.wyphub.com` 对外（带令牌鉴权），见 [`deploy/macmini/`](deploy/macmini/README.md)。
+云版 DSL：`python dify-apps/build_dsl.py --memory-url https://urm.wyphub.com` → `dify-apps/dist/cloud/`。
+
 ## 组成
 
 | 目录 | 是什么 | 怎么验证 |

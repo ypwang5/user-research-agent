@@ -1,0 +1,344 @@
+app:
+  name: ① 访谈提纲生成
+  description: 结合历史调研记忆，按 Mom Test 原则生成访谈提纲（公开演示：请勿上传真实隐私；同一调研方向的数据会共享，可能被定期清理）
+  icon: 🧭
+  icon_background: '#E4FBCC'
+  mode: workflow
+  use_icon_as_answer_icon: false
+kind: app
+version: 0.7.0
+dependencies: []
+workflow:
+  conversation_variables: []
+  environment_variables:
+  - id: env-memory-key
+    name: MEMORY_API_KEY
+    value_type: secret
+    value: ''
+    description: 记忆服务 API Key
+  features:
+    file_upload:
+      enabled: false
+    opening_statement: ''
+    retriever_resource:
+      enabled: false
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+  graph:
+    nodes:
+    - id: start
+      type: custom
+      data:
+        selected: false
+        desc: ''
+        type: start
+        title: 开始
+        variables:
+        - variable: project
+          label: 调研方向（项目名，两个应用要一致）
+          type: text-input
+          required: true
+          max_length: 128
+          options: []
+        - variable: target_users
+          label: 目标用户
+          type: paragraph
+          required: true
+          max_length: 2000
+          options: []
+        - variable: hypotheses
+          label: 当前假设（可选）
+          type: paragraph
+          required: false
+          max_length: 4000
+          options: []
+        - variable: interview_context
+          label: 访谈形式/时长/补充说明（可选）
+          type: paragraph
+          required: false
+          max_length: 2000
+          options: []
+      position:
+        x: 40
+        y: 200
+      positionAbsolute:
+        x: 40
+        y: 200
+      width: 244
+      height: 90
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+    - id: http_overview
+      type: custom
+      data:
+        selected: false
+        desc: ''
+        type: http-request
+        title: 读取调研记忆
+        method: get
+        url: https://urm.wyphub.com/v1/overview
+        authorization:
+          type: no-auth
+          config: null
+        headers: Authorization:Bearer {{#env.MEMORY_API_KEY#}}
+        params: |-
+          project:{{#start.project#}}
+          limit:30
+        body:
+          type: none
+          data: []
+        timeout:
+          connect: 10
+          read: 600
+          write: 600
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        ssl_verify: true
+        retry_config:
+          enabled: true
+          max_retries: 2
+          retry_interval: 1000
+          exponential_backoff:
+            enabled: false
+            multiplier: 2
+            max_interval: 10000
+      position:
+        x: 360
+        y: 200
+      positionAbsolute:
+        x: 360
+        y: 200
+      width: 244
+      height: 90
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+    - id: code_mem
+      type: custom
+      data:
+        selected: false
+        desc: ''
+        type: code
+        title: 整理记忆
+        code_language: python3
+        code: |
+          def main(body: str, status_code: int) -> dict:
+              """把 /v1/overview 结果整理成给 LLM 看的文字。"""
+              import json
+
+              if status_code != 200:
+                  return {"memory_text": f"（记忆服务不可用，status={status_code}，按首轮调研处理）",
+                          "insight_count": 0}
+              data = json.loads(body)
+              rows = data.get("insights", [])
+              if not rows:
+                  return {"memory_text": "（暂无历史记忆，这是该方向的首轮调研）", "insight_count": 0}
+              lines = [f"已访谈 {data.get('total_interviewees', 0)} 人、{data.get('total_sessions', 0)} 次，"
+                       f"累计 {data.get('total_insights', 0)} 条洞察。按提及人数排序："]
+              for r in rows:
+                  quotes = "；".join(f"“{e['quote']}”" for e in r.get("evidence", [])[:2] if e.get("quote"))
+                  lines.append(f"- [{r['type']}] {r['summary']}（{r['mention_count']} 人提到）{quotes}")
+              return {"memory_text": "\n".join(lines), "insight_count": len(rows)}
+        variables:
+        - variable: body
+          value_selector:
+          - http_overview
+          - body
+        - variable: status_code
+          value_selector:
+          - http_overview
+          - status_code
+        outputs:
+          memory_text:
+            type: string
+            children: null
+          insight_count:
+            type: number
+            children: null
+      position:
+        x: 680
+        y: 200
+      positionAbsolute:
+        x: 680
+        y: 200
+      width: 244
+      height: 90
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+    - id: llm_guide
+      type: custom
+      data:
+        selected: false
+        desc: ''
+        type: llm
+        title: 生成访谈提纲
+        model:
+          provider: langgenius/deepseek/deepseek
+          name: deepseek-v4-flash
+          mode: chat
+          completion_params:
+            temperature: 0.5
+            max_tokens: 8000
+            thinking: false
+        prompt_template:
+        - role: system
+          text: |-
+            你是资深用户研究员，擅长用《The Mom Test》方法设计访谈，帮助独立开发者/副业者发现"真实存在、且有人愿意花钱解决"的需求。
+
+            ## 访谈原则（必须遵守）
+            1. 问过去的具体行为，不问未来的假设：问"上一次遇到这个问题是什么时候、当时怎么做的"，不问"你会不会用/买"。
+            2. 不推销、不描述你的方案，不让对方评价你的点子——那只会得到客气话。
+            3. 挖代价：时间、金钱、情绪、出错后果；以及他们已经为此花过的钱/找过的替代方案（Excel、外包、雇人、买软件）。
+            4. 追问"为什么"直到具体场景；对模糊词（"挺麻烦""经常"）追问量化（多久一次、每次多久）。
+            5. 付费意愿只看行为证据：已经花过的钱、正在用的付费工具、预算归属、谁拍板。
+            6. 问题开放、中立，避免引导（不要"你是不是觉得XX很麻烦？"）。
+
+            ## 利用历史调研记忆
+            - 被多人提到（mention_count≥2）的痛点：本轮重点验证付费意愿和现有替代方案，不必再问"有没有这个问题"。
+            - 只有 1 人提到的：用开放问题看对方是否会自发提起，不要直接点名问。
+            - 历史记忆里没覆盖到的目标人群环节：设计探索性问题。
+            - 没有历史记忆时：以探索为主，覆盖完整工作流。
+
+            ## 输出格式（Markdown，中文）
+            # 访谈提纲：<主题>
+            ## 本轮目标（3 条以内，说明想验证/发现什么）
+            ## 开场（1~2 个问题，建立信任、了解背景）
+            ## 核心问题（8~12 个，按访谈顺序分组）
+            每个问题写成：
+            **Q<n>. 问题原文**
+            - 目的：……
+            - 追问：……（2~3 个）
+            - 关注信号：听到什么说明有价值 / 什么说明是伪需求
+            ## 收尾（推荐其他受访者、可否回访）
+            ## 访谈者避坑提醒（结合本主题，5 条以内）
+            ## 记录清单（访谈后要整理给分析 Agent 的要点）
+        - role: user
+          text: |-
+            调研方向（project）：{{#start.project#}}
+            目标用户：{{#start.target_users#}}
+            当前假设（可能为空）：{{#start.hypotheses#}}
+            访谈形式/补充说明（可能为空）：{{#start.interview_context#}}
+
+            ## 历史调研记忆
+            {{#code_mem.memory_text#}}
+
+            请生成本轮访谈提纲。
+        context:
+          enabled: false
+          variable_selector: []
+        vision:
+          enabled: false
+        memory: null
+        structured_output_enabled: false
+        reasoning_format: separated
+        retry_config:
+          enabled: true
+          max_retries: 2
+          retry_interval: 2000
+          exponential_backoff:
+            enabled: false
+            multiplier: 2
+            max_interval: 10000
+      position:
+        x: 1000
+        y: 200
+      positionAbsolute:
+        x: 1000
+        y: 200
+      width: 244
+      height: 90
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+    - id: end
+      type: custom
+      data:
+        selected: false
+        desc: ''
+        type: end
+        title: 结束
+        outputs:
+        - variable: guide
+          value_selector:
+          - llm_guide
+          - text
+          value_type: string
+        - variable: memory_insights
+          value_selector:
+          - code_mem
+          - insight_count
+          value_type: number
+      position:
+        x: 1320
+        y: 200
+      positionAbsolute:
+        x: 1320
+        y: 200
+      width: 244
+      height: 90
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+    edges:
+    - id: start-source-http_overview
+      type: custom
+      source: start
+      target: http_overview
+      sourceHandle: source
+      targetHandle: target
+      zIndex: 0
+      data:
+        sourceType: start
+        targetType: http-request
+        isInIteration: false
+        isInLoop: false
+    - id: http_overview-source-code_mem
+      type: custom
+      source: http_overview
+      target: code_mem
+      sourceHandle: source
+      targetHandle: target
+      zIndex: 0
+      data:
+        sourceType: http-request
+        targetType: code
+        isInIteration: false
+        isInLoop: false
+    - id: code_mem-source-llm_guide
+      type: custom
+      source: code_mem
+      target: llm_guide
+      sourceHandle: source
+      targetHandle: target
+      zIndex: 0
+      data:
+        sourceType: code
+        targetType: llm
+        isInIteration: false
+        isInLoop: false
+    - id: llm_guide-source-end
+      type: custom
+      source: llm_guide
+      target: end
+      sourceHandle: source
+      targetHandle: target
+      zIndex: 0
+      data:
+        sourceType: llm
+        targetType: end
+        isInIteration: false
+        isInLoop: false
+    viewport:
+      x: 0
+      y: 0
+      zoom: 0.6
