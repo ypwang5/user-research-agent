@@ -4,6 +4,14 @@
 
 ## 在线演示
 
+| 应用 | 链接 |
+|---|---|
+| ① 访谈提纲生成 | https://udify.app/workflow/CLMEIrZWu5uPxxdt |
+| ② 访谈分析与计划 | https://udify.app/workflow/mS8gcsg2ZOXcN8Sp |
+
+> 公开演示：请勿上传真实隐私；同一"调研方向"的数据会共享。两个应用的「调研方向」填一样，② 写入的记忆 ① 就能读到。
+> 试用材料：一段虚构访谈（市场专员做 PPT 的痛点，含假手机号/微信号用于检验脱敏），可直接粘贴到 ② 的"访谈记录文字"。
+
 两个应用部署在 Dify 官方云，记忆服务 + Milvus 跑在家里的 Mac mini 上，经 Cloudflare Tunnel 以 `https://urm.wyphub.com` 对外（带令牌鉴权），见 [`deploy/macmini/`](deploy/macmini/README.md)。
 云版 DSL：`python dify-apps/build_dsl.py --memory-url https://urm.wyphub.com` → `dify-apps/dist/cloud/`。
 
